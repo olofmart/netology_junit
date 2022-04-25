@@ -2,13 +2,12 @@
 import java.util.Scanner;
 
 public class Main {
-    private static final int FIRST_OPERATOR = 0;
-    private static final int SECOND_OPERATOR = 2;
-    private static boolean exit = false;
-    private static MathOper mathOper = new MathOper();
-    private static ConverRomToArab converRomToArab = new ConverRomToArab();
 
     public static void main(String[] args) throws Exception {
+        final int FIRST_OPERATOR = 0;
+        final int SECOND_OPERATOR = 2;
+        boolean exit = false;
+        MathOper mathOper = new MathOper();
         Scanner scanner = new Scanner(System.in);
 
         welcome();
@@ -55,6 +54,8 @@ public class Main {
     }
 
     private static void inputDataAnalysis (String[] strings) throws Exception {
+        ConverRomToArab converRomToArab = new ConverRomToArab();
+
         if (strings.length != 3) {
             throw new Exception();
         }

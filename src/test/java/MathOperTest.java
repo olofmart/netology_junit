@@ -9,12 +9,10 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 public class MathOperTest {
-    MathOper sut;
 
     @BeforeEach
     public void initTest() {
         System.out.println("Test start");
-        sut = new MathOper();
     }
 
     @AfterEach
@@ -26,6 +24,7 @@ public class MathOperTest {
     @MethodSource("sourceAdditionTest")
     public void additionTest(String a, String b, String expected) {
 
+        MathOper sut = new MathOper();
         String result = sut.addition(a, b);
 
         Assertions.assertEquals(expected, result);
@@ -34,6 +33,7 @@ public class MathOperTest {
     @ParameterizedTest
     @MethodSource("sourceSubtractionTest")
     public void subtractionTest() {
+        MathOper sut = new MathOper();
         String a = "10", b = "5", expected = "5";
         String result = null;
         try {
@@ -47,6 +47,7 @@ public class MathOperTest {
 
     @Test
     public void subtractionTestThrowsException() {
+        MathOper sut = new MathOper();
         String a = "V", b = "V";
 
         var expected = Exception.class;
@@ -57,6 +58,7 @@ public class MathOperTest {
     @ParameterizedTest
     @MethodSource("sourceDivisionTest")
     public void divisionTest() {
+        MathOper sut = new MathOper();
         String a = "5", b = "5", expected = "1";
         String result = null;
         try {
@@ -70,6 +72,7 @@ public class MathOperTest {
 
     @Test
     public void divisionTestThrowsException() {
+        MathOper sut = new MathOper();
         String a = "10", b = "0";
 
         var expected = Exception.class;
@@ -81,6 +84,7 @@ public class MathOperTest {
     @MethodSource("sourceMultiplicationTest")
     public void multiplicationTest(String a, String b, String expected) {
 
+        MathOper sut = new MathOper();
         String result = null;
         try {
             result = sut.multiplication(a, b);

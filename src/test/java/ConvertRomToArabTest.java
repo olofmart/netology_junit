@@ -13,7 +13,6 @@ public class ConvertRomToArabTest {
     @BeforeEach
     public void initTest() {
         System.out.println("Test start");
-        sut = new ConverRomToArab();
     }
 
     @AfterEach
@@ -25,6 +24,7 @@ public class ConvertRomToArabTest {
     @MethodSource("source")
     public void convertTest (String a, int expected) {
 
+        sut = new ConverRomToArab();
         int result = sut.convert(a);
 
         Assertions.assertEquals(expected, result);
